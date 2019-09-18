@@ -9,6 +9,11 @@ module Telcosms
   def self.new_sms(numbers, message, username, password, servico)
   	numbers.each do |number|
   		post("/api?action=sendmessage&username=#{username}&password=#{password}&recipient=#{number}&messagetype=SMS:TEXT&messagedata=#{message}&originator=#{servico}", :headers => {'Content-Type' => 'application/json'}).parsed_response
-		end
+	end
+  end
+  
+  # check balance
+  def self.check_balance(username, password)
+  	post("/api?action=getcredits&username=#{username}&password=#{password}&useraccount=#{username}", :headers => {'Content-Type' => 'application/json'}).parsed_response
   end	
 end
