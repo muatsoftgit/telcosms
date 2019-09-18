@@ -37,6 +37,14 @@ Telcosms.new_sms(numbers, message, username, password, servico)
 ## password is a string with password given by the Telcosms crew(as best practive, use environment variable).
 ## servico is a string with the text that will show up as contact sender.
 
+# Check Balance
+## You need to pass 2 arguments to make it work (username, password)
+
+Telcosms.check_balance(username, password)
+
+## username is a string with username given by the Telcosms crew(as best practive, use environment variable).
+## password is a string with password given by the Telcosms crew(as best practive, use environment variable).
+
 ## Help and Docs
 
 - [TelcoSMS](http://telcosms.co.ao)
